@@ -1,0 +1,19 @@
+/**
+ * invertObj - should swap object keys and values
+ * @param {object} obj - the initial object
+ * @returns {object | undefined} - returns new object or undefined if nothing did't pass
+ */
+export function invertObj(obj) {
+  if (obj === undefined) {
+    return undefined;
+  }
+
+  if (typeof obj !== 'object' || obj === null) {
+    throw new TypeError('Expected an object'); 
+  }
+
+  return Object.entries(obj).reduce((acc, [key, value]) => {
+    acc[value] = key;
+    return acc;
+  }, {});
+}
