@@ -58,3 +58,4 @@ export default class NotificationMessage {
       NotificationMessage.activeNotification.remove();
     }
 }
+}
