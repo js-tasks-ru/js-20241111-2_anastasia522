@@ -29,11 +29,10 @@ export default class NotificationMessage {
     }
   
     createElement() {
-      if (NotificationMessage.activeNotification) {NotificationMessage.activeNotification.remove();}
   
       const element = document.createElement("div");
       element.innerHTML = this.template;
-  
+
       this.element = element.lastElementChild;
       NotificationMessage.activeNotification = this.element;
     }
@@ -42,7 +41,7 @@ export default class NotificationMessage {
       parent.append(this.element);
       this.timerId = setTimeout(() => this.remove(), this.duration);
     }
-  
+
     removeTimeout(timeout = this.timerId) {
       if (timeout) {clearTimeout(timeout);}
     }
