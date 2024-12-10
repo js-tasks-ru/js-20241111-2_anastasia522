@@ -47,13 +47,13 @@ class Tooltip {
 
   remove() {
     this.element?.remove();
-    document.removeEventListener("pointerover", this.handlePointerOver);
-    document.removeEventListener("pointerout", this.handlePointerOut);
-    document.removeEventListener("pointermove", this.handlePointerMove);
   }
 
   destroy() {
     this.remove();
+    document.removeEventListener("pointerover", this.handlePointerOver);
+    document.removeEventListener("pointerout", this.handlePointerOut);
+    document.removeEventListener("pointermove", this.handlePointerMove);
   }
 }
 
